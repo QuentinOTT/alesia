@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique - Alésia RP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="store.html" class="active">Boutique</a>
+            <a href="about.html">À propos</a>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <h1>Boutique Alésia</h1>
+        <p>Achetez des coins pour améliorer votre expérience de jeu</p>
+        <div class="cta-buttons">
+            <a href="https://alesiarp.tebex.io/" class="cta-button">
+                <i class="fas fa-shopping-cart"></i>
+                Accéder à la boutique
+            </a>
+            <a href="https://discord.gg/alesiarp" class="cta-button">
+                <i class="fab fa-discord"></i>
+                Rejoindre Discord
+            </a>
+        </div>
+    </div>
+
+    <section class="server-features">
+        <div class="feature-grid" id="featured-packs">
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack Débutant</h3>
+                <p class="coins">1000 Coins</p>
+                <p class="price">12.00 EUR</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack Avancé</h3>
+                <p class="coins">5000 Coins <span class="bonus">+600</span></p>
+                <p class="price">60.00 EUR</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack Premium</h3>
+                <p class="coins">10 000 Coins <span class="bonus">+1000</span></p>
+                <p class="price">120.00 EUR</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack Ultimate</h3>
+                <p class="coins">20 000 Coins <span class="bonus">+5000</span></p>
+                <p class="price">240.00 EUR</p>
+            </div>
+        </div>
+
+        <button class="show-more-btn" onclick="togglePacks()">
+            <span>Voir tous les packs</span>
+            <i class="fas fa-chevron-down"></i>
+        </button>
+
+        <div class="feature-grid hidden" id="all-packs">
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack Starter</h3>
+                <p class="coins">500 Coins</p>
+                <p class="price">6.00 EUR</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack 2000</h3>
+                <p class="coins">2000 Coins</p>
+                <p class="price">24.00 EUR</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack 3000</h3>
+                <p class="coins">3000 Coins <span class="bonus">+200</span></p>
+                <p class="price">36.00 EUR</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack 4000</h3>
+                <p class="coins">4000 Coins <span class="bonus">+400</span></p>
+                <p class="price">48.00 EUR</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack 6000</h3>
+                <p class="coins">6000 Coins <span class="bonus">+800</span></p>
+                <p class="price">72.00 EUR</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack 7000</h3>
+                <p class="coins">7000 Coins <span class="bonus">+1000</span></p>
+                <p class="price">84.00 EUR</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack 8000</h3>
+                <p class="coins">8000 Coins <span class="bonus">+1200</span></p>
+                <p class="price">96.00 EUR</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack 9000</h3>
+                <p class="coins">9000 Coins <span class="bonus">+1400</span></p>
+                <p class="price">108.00 EUR</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack 15K</h3>
+                <p class="coins">15 000 Coins <span class="bonus">+3000</span></p>
+                <p class="price">180.00 EUR</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Pack 50K</h3>
+                <p class="coins">50 000 Coins <span class="bonus">+8000</span></p>
+                <p class="price">600.00 EUR</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function togglePacks() {
+            const allPacks = document.getElementById('all-packs');
+            const button = document.querySelector('.show-more-btn');
+            const icon = button.querySelector('i');
+            const text = button.querySelector('span');
+            
+            allPacks.classList.toggle('hidden');
+            button.classList.toggle('active');
+            
+            if (!allPacks.classList.contains('hidden')) {
+                text.textContent = 'Voir moins';
+                icon.className = 'fas fa-chevron-up';
+            } else {
+                text.textContent = 'Voir tous les packs';
+                icon.className = 'fas fa-chevron-down';
+            }
+        }
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>Alésia<span>RP</span></h2>
+            </div>
+            <div class="footer-links">
+                <a href="https://discord.gg/alesiarp" class="footer-link">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://alesiarp.tebex.io/" class="footer-link">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Alésia RP design by qu3ntix5. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
